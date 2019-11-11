@@ -1,1 +1,1 @@
-bootstrap registration
+LEXI chatbot registration form
