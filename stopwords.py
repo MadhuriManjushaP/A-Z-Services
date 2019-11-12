@@ -17,4 +17,5 @@ main_words = []
 for i in spl:
     if i not in stop_words:
         main_words.append(i)
+
 print(main_words)
