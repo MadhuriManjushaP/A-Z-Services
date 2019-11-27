@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>ModelForm Tutorial</title>
+</head>
+<body>
+<h2>All User Details</h2>
+    <table >
+    {% for item in users %}
+    <tr>
+        <td><b>Name:</b>{{ item.name }}
+            <td><b>age:</b> {{ item.age }}</td></div>
+            <td><b>gender:</b> {{ item.gender }}</td></div>
+        <td><b>height:</b> {{ item.height }}</td>
+        <td><b>weight:</b> {{ item.weight }}</td>
+        <td><b>smoke:</b> {{ item.smoke }}</td>
+        <td><b>drink:</b> {{ item.drink }}</td>
+        <td><b>diabetes:</b> {{ item.diabetes }}</td>
+        <td><b>Highbp:</b> {{ item.highbp }}</td>
+    </tr>
+    </tr>
+    </tr>
+    </tr>
+    <tr>
+    <td colspan="2" class="divider"><hr/></td>
+</tr>
+
+
+
+
+    {% endfor %}
+    </table>
+    
+        
+    
+</body>
+</html>
