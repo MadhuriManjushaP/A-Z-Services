@@ -20,7 +20,10 @@ class UserDetails(models.Model):
     drink=models.BooleanField()
     diabetes=models.BooleanField()
     highbp=models.BooleanField()
-    conver=models.CharField(max_length=255)
     
-    def __str__(self):
-        return self.name
+    
+    
+
+def __str__(self):
+
+    return self.name

@@ -19,7 +19,8 @@ def userDetails(request):
 
 
             u = form.save()
-            users = UserDetails.objects.all()
+            users = UserDetails.objects.latest('name')
+            last_name = users.name
             user_visits = request.session.get('user_visits', 0)
             request.session['user_visits'] = user_visits + 1
             #request.session['users'] = users
@@ -27,7 +28,7 @@ def userDetails(request):
             res=["may i know ur problem","how are you feeling today","since you visited us we can  understand that something is bothering today, may i know your symtoms"]
             res1 = random.choice(res)
                 
-            return render(request, 'test.html', {'users': users,'res1':res1})
+            return render(request, 'test.html', {'last_name': last_name,'res1':res1})
             
           
     else: 
@@ -54,4 +55,4 @@ def create_session(request):
         return HttpResponse("<h1>You are Logged out.Thank you for using our Chatbot</h1>")'''
 
 def logout(request):
-            return render(request,'logout.html')
+    return render(request,'logout.html')

@@ -5,5 +5,4 @@ class UserModelForm(ModelForm):
     class Meta:
         model = UserDetails
         fields = ['name','age','gender','height','weight','smoke','drink','diabetes','highbp']
-
-       
+ 

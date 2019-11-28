@@ -6,6 +6,7 @@
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <!-- <script src="javascript.js"></script> -->
 <link href="{% static 'css/test.css' %}" rel="stylesheet">
+
 </head>
 <script>
 
@@ -35,28 +36,26 @@
     <!-- <ul class="messages"></ul> -->
     <!--<img src="bgimage3.jpeg" width="100%">-->
     <img href="{% static 'images/backimg.jpg' %}">
-            {% for u in users%}
+            
                <div class="alert alert-info" role="alert">
                 
-                  <h5>Hi &nbsp{{u.name}},<br>{{res1}}</h5>
+                  <h5>Hi &nbsp{{last_name}},<br>{{res1}}</h5>
                    
                   </div>
                   
-              {% endfor %}
-               
-                 <div class="alert alert-success" role="alert">
-                  <p id="demo"></p>
-          </div>
-                  
+              
+            
     <div class="bottom_wrapper clearfix">
-      <div class="message_input_wrapper">
-           <input type='text' class="message_input" placeholder="Enter your symptoms here..." />
+       <div class="message_input_wrapper">
+           <input type='text'id="myText" class="message_input" placeholder="Enter your symptoms here..." />
            <!--<input type="textarea" id="myText" class="message_input" placeholder="Enter symptoms here.."/>-->
        </div>
      
          
         <div class="send_message">
-            <div class="text" onClick="getMessageText()">Send</div>
+          <input type="submit" name="submit" />
+            <!--<div class="text" >Send</div>-->
+               
         </div>
     </div>
     <div class="icon"></div>
@@ -70,7 +69,7 @@
     </li>
     </div>
     </form>
-    <script>
+  <!--  <script>
     function getMessageText()
     {
   
@@ -84,7 +83,7 @@
       
         
     } 
-</script>
+</script>-->
 </div>
 </body>
 </html>
