@@ -35,8 +35,7 @@ def userDetails(request):
         form_class = UserModelForm
 
     return render(request, 'new.html', {
-        'form': form_class,
-    })
+        'form': form_class, })
 
 '''def logout(request):
     {
