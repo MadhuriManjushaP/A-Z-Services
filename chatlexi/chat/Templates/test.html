@@ -29,7 +29,7 @@
 
     <div class="form-group"> 
         <button type="logout" class="btn btn-success " > 
-                {%csrf_token %} 
+                
         Logout
        </button> 
       
@@ -39,7 +39,13 @@
             
                <div class="alert alert-info" role="alert">
                 
-                  <h5>Hi &nbsp{{last_name}},<br>{{res1}}</h5>
+                  <h5>Hi &nbsp{{last_name}},<br>your bmi is{{bmi}},<br>{{a}}</h5>
+                   
+                  
+                </div>
+                <div class="alert alert-info" role="alert">
+                
+                  <h5>{{res1}}</h5>
                    
                   
                 </div>
