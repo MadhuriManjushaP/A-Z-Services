@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="../lib/jquery.js"></script>
+	<script src="../dist/jquery.validate.js"></script>
+  
+ 
+</head>
+
+<body>
+
+<div class="container">
+  <h1 text align="center">Register With Chatbot</h1>
+  <div class="row">
+    <div class="col-sm-6" style="background-color:#01579b ;">
+	
+	<form action="reg",Method=post>
+	<div class="form-group">
+    <label for="exampleInputname" style="color:white">Name</label>
+    <input type="text" class="form-control" id="username" aria-describedby="uname" placeholder="Enter name">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1" style="color:white">Email</label>
+    <input type="email" class="form-control" id="userheight" aria-describedby="uheight" placeholder="Enter Email">
+  </div>
+  <div class="row">
+  <div class="col-sm-6">
+	<div class="form-group">
+    <label for="exampleInputheight" style="color:white" width="10px">Height</label>
+    <input type="number" class="form-control" id="userheight" aria-describedby="uheight" placeholder="Enter height">
+  </div>
+  </div>
+  <div class="col-sm-6">
+	<div class="form-group">
+    <label for="exampleInputheight" style="color:white" width="10px">Weight</label>
+    <input type="number" class="form-control" id="userheight" aria-describedby="uheight" placeholder="Enter height">
+  </div>
+  </div>
+  </div>
+  <div style="color:white">
+  <input type="radio" name="gender" value="male" checked> Male
+    <input type="radio" name="gender" value="Female" checked>Female
+	</div>
+	</div>
+    <div class="col-sm-6" style="background-color:#01579b ;">
+	<div class="form-group">
+    <label for="exampInputage" style="color:white">Age</label>
+    <input type="number" class="form-control" id="userage" aria-describedby="uage" placeholder="Enter Age">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1" style="color:white">Password</label>
+    <input type="password" class="form-control" id="userpassword" aria-describedby="upassword" placeholder="Enter password">
+  </div>
+  
+                                        <div class="form-group"><label for="exampleInputage" style="color:white">Pre Exisiting Conditions</label>
+                                            <select class="form-control">
+                                                <option class="hidden"  selected disabled>Select Yours</option>
+                                                <option>Diabetes</option>
+                                                <option>Blood pressure</option>
+                                                <option>Both</option>
+                                            </select>
+                                        </div>
+										<div style="color:white">
+										<input type="checkbox" name="habbit1" value="smoke">Smoke
+  <input type="checkbox" name="habbit2" value="drink"> Drink<br>
+	</div></div>
+  </div>
+  </form>
+</div>
+ <div class="row">
+    <div class="col-sm-10" style="background-color:lavender;">
+	
+	
+	</div>
+	<div class="naveen">
+    <div class="col-sm-2">
+ 
+	
+<button type="button" class="btn btn-primary btn-lg" style="margin-top:20px">SUBMIT</button>
+	</div>
+	</div>
+</body>
+</html>

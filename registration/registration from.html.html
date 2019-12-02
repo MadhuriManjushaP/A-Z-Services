@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% comment %} title of the page {% endcomment %}
+  <title>Bootstrap Example</title> 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% comment %} Bootstrap link  {% endcomment %}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="js/jquery.validate.js"></script>
+  <script src="js/grid.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <!--<script src="js/jquery.validate.js"></script>-->
+ 
+</head>
+
+<body>
+{% comment %} taken the page as container/written inline stylesheet {% endcomment %}
+<div class="container">
+{% comment %} heading of registration form {% endcomment %}
+  <h1 text align="center">Fill This Questionnaire</h1>
+  <div class="row">
+    <div class="col-sm-6" style="background-color:#01579b ;">
+	
+	<form action="reg",Method="post" id="#grid">
+	<div class="form-group">
+  {% comment %} input feild for name {% endcomment %}
+    <label for="exampleInputname" style="color:white">Name</label>
+    <input type="text" class="form-control" id="username" aria-describedby="uname" placeholder="Enter name" required>
+  </div>
+  {% comment %} adjustment of pages /written inline css {% endcomment %}
+  <div class="row">
+  <div class="col-sm-6">
+  {% comment %} taken each input feild as form group {% endcomment %}
+	<div class="form-group">
+  {% comment %} input feild height {% endcomment %}
+    <label for="exampleInputheight" style="color:white" width="10px">Height</label>
+    <input type="number" class="form-control" id="userheight" aria-describedby="uheight" placeholder="Enter height">
+  </div>
+  </div>
+  <div class="col-sm-6">
+	<div class="form-group">
+  {% comment %} input feild for weight {% endcomment %}
+    <label for="exampleInputheight" style="color:white" width="10px">Weight</label>
+    <input type="number" class="form-control" id="userheight" aria-describedby="uheight" placeholder="Enter height">
+  </div>
+  </div>
+  </div>
+  <div style="color:white">
+  {% comment %} kept two radio buttons {% endcomment %}
+  <input type="radio" name="gender" value="male" checked> Male
+    <input type="radio" name="gender" value="Female" checked>Female
+	</div>
+	</div>
+    <div class="col-sm-6" style="background-color:#01579b ;">
+	<div class="form-group">
+  {% comment %}input feild for age  {% endcomment %}
+    <label for="exampInputage" style="color:white">Age</label>
+    <input type="number" class="form-control" id="userage" aria-describedby="uage" placeholder="Enter Age">
+  </div>
+  {% comment %} menu list named as pre Exisiting Conditions {% endcomment %}
+                                        <div class="form-group"><label for="exampleInputage" style="color:white">Pre Exisiting Conditions</label>
+                                            <select class="form-control">
+                                            {% comment %} options are hidden inside menu list {% endcomment %}
+                                                <option class="hidden"  selected disabled>Select Yours</option>
+                                                <option id="sample1">Diabetes</option>
+                                                <option id="sample2">Blood pressure</option>
+                                            </select>
+                                        </div>
+										<div class="a">
+										<div class="col-sm-3" style="background-color:#01579b ;">
+										<div style="color:white"> Other habits</div>
+										
+			</div>
+			<div class="col-sm-9" style="background-color:#01579b ;">
+			<div style="color:white" style="margin-right:50px">
+      {% comment %} kept 2 checkboxes for smoke and drink {% endcomment %}
+										<input type="checkbox" name="habbit1" value="smoke">Smoke
+  <input type="checkbox" name="habbit2" value="drink"> Drink
+	</div>
+	</div>
+	</div>
+  </div>
+  </form>
+</div>
+ <div class="row">
+    <div class="col-sm-10" style="background-color:lavender;">
+	
+	
+	</div>
+	<div class="naveen">
+    <div class="col-sm-2">
+ 
+	{% comment %} submit button {% endcomment %}
+<button type="button" class="btn:#008CBA btn-lg" style="margin-top:20px">SUBMIT</button>
+	</div>
+  </div>
+  <script>
+    $("#grid").validate();
+    </script>
+</body>
+</html>
