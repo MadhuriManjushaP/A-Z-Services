@@ -1,0 +1,38 @@
+.container{
+    margin-top:0px;
+    max-width: 800px!important;
+    height:500px!important;
+    overflow-y: scroll;
+   
+}
+
+.scr{
+    width:200px;
+    height:50px ;
+    background-color: pink;
+    overflow-y: scroll;
+}
+.alert-info{
+    width:200px !important;
+    height:40px;
+}
+
+.new{
+    background-color:#f1f1f1;
+}
+.form-control{
+    width:500px;
+}
+.tit{
+    text-align: center;
+    width:785px;
+    margin-left:0px;
+    background-color: blue;
+    margin-left:290px;
+    margin-top:30px;
+    height:50px;
+    font-weight:50px;
+    font-style: italic;
+    font-size: 35px;
+    padding-bottom: 5px;
+}

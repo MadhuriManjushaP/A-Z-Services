@@ -46,7 +46,7 @@ def userDetails(request):
             res=["may i know ur problem","how are you feeling today","since you visited us we can  understand that something is bothering today, may i know your symtoms"]
             res1 = random.choice(res)
                 
-            return render(request, 'test.html', {'last_name': last_name,'res1':res1,'bmi': bmi,'a': a})
+            return render(request, 'temp.html', {'last_name': last_name,'res1':res1,'bmi': bmi,'a': a})
             
     else: 
         form_class = UserModelForm
@@ -72,3 +72,26 @@ def create_session(request):
 
 def logout(request):
     return render(request,'logout.html')
+#new form 
+from django.shortcuts import render
+from django.http import JsonResponse
+from .models import Post
+
+def create_post(request):
+    posts = Post.objects.all()
+    response_data = {}
+
+    if request.POST.get('action') == 'post':
+        title = request.POST.get('title')
+        #description = request.POST.get('description')
+
+        response_data['title'] = title
+        #response_data['description'] = description
+      
+        Post.objects.create(
+            title = title,
+            #description = description,
+            )
+        return JsonResponse(response_data)
+
+    return render(request, 'temp.html', {'posts':posts})    

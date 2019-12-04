@@ -20,7 +20,10 @@ class UserDetails(models.Model):
     drink=models.BooleanField()
     diabetes=models.BooleanField()
     highbp=models.BooleanField()
-    
+
+class Post (models.Model):
+    title = models.CharField(max_length=50)
+      
     
     
 

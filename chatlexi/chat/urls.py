@@ -5,10 +5,10 @@ from . import views as chat_views
 
 urlpatterns = [
  path('', chat_views.userDetails),
- path('test/', chat_views.userDetails),
- path('create/', chat_views.create_session),
-
- path('logout/', chat_views.logout)
+ path('temp/', chat_views.userDetails),
+ path('session/', chat_views.create_session),
+path('create/', chat_views.create_post, name="create"),
+path('logout/', chat_views.logout)
  
     
     
