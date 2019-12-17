@@ -42,7 +42,7 @@ def func(x, y):
         if count == 0:
             continue
 
-#function for treatements for hyper
+#function for treatments for hyper
 def treathyper():
     print("Add these to your Diet':coffee,tea(without diary),egg whites,oats,honey,potatoes,mushrooms,green leafy vegetables,meat such as beef and lamb,whole grains,unsalted nuts and seeds.\n'Remove these foods in your Diet':fish,prawns,crabs,lobster,sushi,milk and dairy,cheese,egg yolks,Soy based foods,caffeine")
 #function for treatments for hypo
