@@ -64,34 +64,34 @@ if Thyroid['report'] == 'yes':
     report['Serum_T3'] = float(input("Please provide the Serum T3 value:"))
     report['Serum_T4'] = float(input("Please provide the Serum T4 value:"))
     report['Serum_Tsh'] = float(input("Please provide the Serum TSH value:"))
-    if report['Serum_T3'] > 2.3 and report['Serum_T4'] > 12.0 and report['Serum_Tsh'] > 5.5:
+    if report['Serum_T3'] > 2.3 and report['Serum_T4'] > 12.0 and report['Serum_tsh'] > 5.5:
         print("Your test results say, you have Hypothyroidism")
         treathypo()
     elif report['Serum_T3'] > 2.3 and report['Serum_T4'] > 12.0:
         print("Your test results say, you have Hypothyroidism")
         treathypo()
-    elif report['Serum_T4'] > 12.0 and report['Serum_Tsh'] > 5.5:
+    elif report['Serum_T4'] > 12.0 and report['Serum_tsh'] > 5.5:
         print("Your test results say, you have Hypothyroidism")
         treathypo()
-    elif report['Serum_Tsh'] > 5.5 and report['Serum_T3'] > 2.3:
+    elif report['Serum_tsh'] > 5.5 and report['Serum_T3'] > 2.3:
         print("Your test results say, you have Hypothyroidism")
         treathypo()
-    elif report['Serum_Tsh'] > 5.5:
+    elif report['Serum_tsh'] > 5.5:
         print("You have Hypothyroidism")
         treathypo()
-    elif report['Serum_T3'] < 0.8 and report['Serum_T4'] < 4.8 and report['Serum_Tsh'] < 0.35:
+    elif report['Serum_T3'] < 0.8 and report['Serum_T4'] < 4.8 and report['Serum_tsh'] < 0.35:
         print("Your test results say, you have Hyperthyroidism")
         treathyper()
     elif report['Serum_T3'] < 0.8 and report['Serum_T4'] < 4.8:
         print("Your test results say, you have Hyperthyroidism")
         treathyper()
-    elif report['Serum_T4'] < 4.8 and report['Serum_Tsh'] < 0.35:
+    elif report['Serum_T4'] < 4.8 and report['Serum_tsh'] < 0.35:
         print("Your test results say, you have Hyperthyroidism")
         treathyper()
-    elif report['Serum_Tsh'] < 0.35 and report['Serum_T3'] < 0.8:
+    elif report['Serum_tsh'] < 0.35 and report['Serum_T3'] < 0.8:
         print("Your test results say, you have Hyperthyroidism")
         treathyper()
-    elif report['Serum_Tsh'] < 0.35:
+    elif report['Serum_tsh'] < 0.35:
         print("You have Hyperthyroidism")
         treathyper()
 
