@@ -13,10 +13,10 @@ def func(x, y):
         stop_words = set(stopwords.words())  # taking stopwords as set
         stop_words.remove('no')
         spl = re.findall(r"[\w']+",
-                         string)  # findall means finding all the data and \w defines a each alphates and numerics from 0-9 which eliminates the extra characters
+                         string)  # findall means finding all the data and \w defines a each alphabets and numerics from 0-9 which eliminates the extra characters
         # print(spl)
         main_words = []
-        # for loop which checking the stopwords and eleminates the stopwords
+        # for loop which checking the stopwords and eliminates the stopwords
         for i in spl:
             if i not in stop_words:
                 main_words.append(i)  # append means adding the at end of the list
@@ -99,7 +99,7 @@ if Thyroid['report'] == 'yes':
 # conditon for identifing the disease by identifing the symptoms
 if Thyroid['report'] == 'no':
     Hypo['Fatigue'] = input(
-        "These days do you feel fatigue easily:").lower()  # .lower to convert the user input to lower case alphabates and input value is assinged to dictionary
+        "These days do you feel fatigue easily:").lower()  # .lower to convert the user input to lower case alphabets and input value is assinged to dictionary
     Hypo['Increased_sensitivity_to_cold'] = input("Do you feel extreme sensitivity to cold:").lower()
     Hypo['Constipation'] = input("Do you get more constipation problems these days:").lower()
     Hypo['Weight_gain'] = input("Have you being putting on or gaining weight lately:").lower()
