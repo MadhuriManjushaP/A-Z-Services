@@ -1,7 +1,9 @@
+<!--load static files here-->
 {% load static %}
 <html>
     <head>
-        <link href="{% static 'css/temp.css' %}" rel="stylesheet">
+        <link href="{% static 'css/temp.css' %}" rel="stylesheet"><!--link  static files-->
+         <!--paste bootstrap link here-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
 
@@ -12,7 +14,7 @@
        
         <div class="row mb-2 posts">
             <form method="POST" id="post-form" style="position:fixed">
-                {% csrf_token %}
+                {% csrf_token %} #handle csrf token error
                 <div class="form-group " style="margin-top:490px;margin-left:5px;width:785px;display:block">
                 <label for="exampleInputEmail1"></label>
                 <input type="text" class="form-control" id="title" placeholder="Type Here..">
@@ -29,7 +31,7 @@
                         <div class="row no-gutters  rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-scroll style" style="width:250px;height:80px;float:left;padding-left:10px;margin-top:30px;">
                             <div class="col p-1 d-flex flex-column position-relative ">
                                 
-                
+                             <!--integration for the user name and bmi display in broswer-->
                              <h6 class="mb-1 new">Hi &nbsp{{last_name}},<br>your bmi is{{bmi}},<br>{{a}}</h6>
                    
                   
@@ -62,10 +64,11 @@
         </div>
 
     </body>
+             <!--paste  jquery and boostrap links here-->
     <script src="/static/js/jquery-2.2.4.min.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>	
     <script>
-        $(document).on('submit', '#post-form',function(e){
+        $(document).on('submit', '#post-form',function(e){   //ajax form submit
             e.preventDefault();
             $.ajax({
                 type:'POST',
@@ -81,7 +84,7 @@
                     $(".posts").append('<div class="col-md-12 ">'+
                         '<div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250  position-scroll" style="width:200px;height:50px;float:right;">' +
                             '<div class="col p1 d-flex flex-column position-relative ">' +
-                                '<h6 class="mb-1 new ">' + json.title + '</h6>' +
+                                '<h6 class="mb-1 new ">' + json.title + '</h6>' + // display user entered  details in browser
                                 //'<p class="mb-auto">' + json.description + '</p>' +
                             '</div>' +
                         '</div>' +
