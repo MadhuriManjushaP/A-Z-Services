@@ -20,18 +20,14 @@
                 <input type="text" class="form-control" id="title" placeholder="Type Here..">
                 <span><button type="submit" class="btn btn-primary" style="margin-left:30px;float:right;margin-top:-40px!important;">Submit</button><span>
                 </div>
-                <!--<div class="form-group">
-                        <label for="exampleInputEmail1">Description</label>
-                        <textarea class="form-control" id="description" placeholder="Description"></textarea>
-                </div>-->
-                <!--<button type="submit" class="btn btn-primary">Submit</button>-->
+                
             </form>
 
         <div class="col-md-12 ">
                         <div class="row no-gutters  rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-scroll style" style="width:250px;height:80px;float:left;padding-left:10px;margin-top:30px;">
                             <div class="col p-1 d-flex flex-column position-relative ">
                                 
-                             <!--integration for the user name and bmi display in broswer-->
+                             <!--integration for the user name and bmi display in browser-->
                              <h6 class="mb-1 new">Hi &nbsp{{last_name}},<br>your bmi is{{bmi}},<br>{{a}}</h6>
                    
                   
@@ -42,7 +38,7 @@
                         <div class="row no-gutters  rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-scroll style" style="width:250px;height:80px;float:left;padding-left:10px;margin-top:30px;">
                             <div class="col p-1 d-flex flex-column position-relative ">
                 
-                                 <h6 class="mb-1 new">{{res1}}</h6>
+                                 <h6 class="mb-1 new">{{res1}}</h6>  #display the greetings randomly for every different user
                    
                   
                 </div>         </div>   </div>
@@ -54,7 +50,7 @@
                         <div class="row no-gutters  rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-scroll style" style="width:250px;height:35px;float:left;padding-left:10px;margin-top:30px;">
                             <div class="col p-1 d-flex flex-column position-relative">
                                 <h6 class="mb-1 new">{{post.title}}</h6>
-                                <!--<p class="mb-auto">{{post.description}}</p>-->
+                                
                             </div>
                         </div>
                     </div>
@@ -75,7 +71,6 @@
                 url:'{% url "create" %}',
                 data:{
                     title:$('#title').val(),
-                    //description:$('#description').val(),
                     csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
                     action: 'post'
                 },
@@ -85,7 +80,7 @@
                         '<div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250  position-scroll" style="width:200px;height:50px;float:right;">' +
                             '<div class="col p1 d-flex flex-column position-relative ">' +
                                 '<h6 class="mb-1 new ">' + json.title + '</h6>' + // display user entered  details in browser
-                                //'<p class="mb-auto">' + json.description + '</p>' +
+                               
                             '</div>' +
                         '</div>' +
                     '</div>' 
