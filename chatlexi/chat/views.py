@@ -9,7 +9,7 @@ import random
 
 # Create your views here.
 
-from .forms import UserModelForm
+from .forms import UserModelForm     #importing the form                            
 
 def userDetails(request):
 
@@ -19,9 +19,9 @@ def userDetails(request):
 
 
             u = form.save()
-            users = UserDetails.objects.latest('name')
+            users = UserDetails.objects.latest('name')  #the last name in the database
             last_name = users.name
-            formView(request)
+            formView(request)     #calling the session function
            
             Height = users.height
             Height_1 = Height/100
@@ -74,19 +74,19 @@ from .models import Post
 
 def create_post(request):
     posts = Post.objects.all()
-    response_data = {}
+    response_data = {}  
 
     if request.POST.get('action') == 'post':
         title = request.POST.get('title')
-        #description = request.POST.get('description')
+        
 
         response_data['title'] = title
-        #response_data['description'] = description
+       
       
         Post.objects.create(
             title = title,
-            #description = description,
+           
             )
-        return JsonResponse(response_data)
+        return JsonResponse(response_data)                       
 
     return render(request, 'temp.html', {'posts':posts})    
