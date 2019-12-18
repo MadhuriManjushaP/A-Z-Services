@@ -9,6 +9,7 @@ GENDER_CHOICES=[
     ('male','Male'),
     ('female','Female')
 ]
+#crete user details  in model Userdetails class and  migrate in  database
 class UserDetails(models.Model):
     
     name = models.CharField(max_length=255)
@@ -20,7 +21,7 @@ class UserDetails(models.Model):
     drink=models.BooleanField()
     diabetes=models.BooleanField()
     highbp=models.BooleanField()
-
+#create user conversation in model  post class and migrate in database
 class Post (models.Model):
     title = models.CharField(max_length=50)
       
