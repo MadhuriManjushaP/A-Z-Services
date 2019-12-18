@@ -22,7 +22,7 @@ def userDetails(request):
             users = UserDetails.objects.latest('name')  #the last name in the database
             last_name = users.name
             formView(request)     #calling the session function
-           
+           #Calculating BMI for  the user for knowing the chances of the user getting the hypo and hyper since the weight plays an impoertant role
             Height = users.height
             Height_1 = Height/100
             Weight = users.weight
@@ -39,7 +39,7 @@ def userDetails(request):
                 a="Extreme obesity"
             
 
-           
+ #To display the greetings randomly for every different user that logs in to the chat page(temp.html)
             res=["may i know ur problem","how are you feeling today","since you visited us we can  understand that something is bothering today, may i know your symtoms"]
             res1 = random.choice(res)
                 
@@ -74,16 +74,16 @@ from .models import Post
 
 def create_post(request):
     posts = Post.objects.all()
-    response_data = {}  
+    response_data = {}                                        
 
     if request.POST.get('action') == 'post':
         title = request.POST.get('title')
         
 
-        response_data['title'] = title
+        response_data['title'] = title                                #the title(the field where user types) is stored in this response dictionary 
        
       
-        Post.objects.create(
+        Post.objects.create(                                            #creating a new object and sending it to title field which is stored in db everytime user  clicks on send
             title = title,
            
             )
