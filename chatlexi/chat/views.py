@@ -21,8 +21,8 @@ def userDetails(request):
             u = form.save()
             users = UserDetails.objects.latest('name')
             last_name = users.name
-            user_visits = request.session.get('user_visits', 0)
-            request.session['user_visits'] = user_visits + 1
+            formView(request)
+           
             Height = users.height
             Height_1 = Height/100
             Weight = users.weight
@@ -39,10 +39,7 @@ def userDetails(request):
                 a="Extreme obesity"
             
 
-            #user_visits = request.session.get('user_visits', 0)
-            #request.session['user_visits'] = user_visits + 1
-            #request.session['users'] = users
-            #request.session['users.name'] = 'username'
+           
             res=["may i know ur problem","how are you feeling today","since you visited us we can  understand that something is bothering today, may i know your symtoms"]
             res1 = random.choice(res)
                 
@@ -53,25 +50,23 @@ def userDetails(request):
 
     return render(request, 'new.html', {
         'form': form_class, })
+#creating a session for the new.html after user enters the details and clicked on submit button.
+def formView(request):
+    request.session['users'] = 'users'     #creates a session 'users'
+    if request.session.has_key('users'):
+       users=request.session['users']      #if the sessionID already has a key it is assigned to user
+       #request.session['last_activity'] = datetime.now()
+       return render(request, 'temp.html', {})
+    else:
+        logout(request)
+        return render(request, 'logout.html', {"users":users})
 
-'''def logout(request):
-    {
-      
-      del request.session['users']
-      return HttpResponse("<strong>You are logged out.</strong>")
-    } '''
-'''def logout(request):
-        return redirect('/userdetails/')'''
-def create_session(request):
-    request.session['users.name'] = 'username'
-    return HttpResponse("<h1>dataflair<br> the session is set</h1>")
-'''def logout(request):
-        
-        del request.session['users.name']
-        return HttpResponse("<h1>You are Logged out.Thank you for using our Chatbot</h1>")'''
-
-def logout(request):
+# To delete the session when logout view has been called
+def logout(request):                   
+    if request.session.has_key('users'):       
+        del request.session['users']
     return render(request,'logout.html')
+
 #new form 
 from django.shortcuts import render
 from django.http import JsonResponse
