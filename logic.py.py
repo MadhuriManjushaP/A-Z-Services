@@ -14,13 +14,12 @@ def func(x, y):
         stop_words.remove('no')
         spl = re.findall(r"[\w']+",
                          string)  # findall means finding all the data and \w defines a each alphabets and numerics from 0-9 which eliminates the extra characters
-        # print(spl)
+      
         main_words = []
         # for loop which checking the stopwords and eliminates the stopwords
         for i in spl:
             if i not in stop_words:
                 main_words.append(i)  # append means adding the at end of the list
-        # print(main_words)
         l = "yes"  # string comparing
         k = "no"  # string for comparing
         # for loop running through the main_words list
@@ -42,10 +41,16 @@ def func(x, y):
         if count == 0:
             continue
 
-#function for treatments for hyper
+#function for printing the message
+def hyper():
+    print("Your test results say, you have Hyperthyroidism")
+#function for printing the message
+def hypo():
+    print("Your test results say, you have Hypothyroidism")
+#function for treatments of hyper
 def treathyper():
     print("Add these to your Diet':coffee,tea(without diary),egg whites,oats,honey,potatoes,mushrooms,green leafy vegetables,meat such as beef and lamb,whole grains,unsalted nuts and seeds.\n'Remove these foods in your Diet':fish,prawns,crabs,lobster,sushi,milk and dairy,cheese,egg yolks,Soy based foods,caffeine")
-#function for treatments for hypo
+#function for treatments of hypo
 def treathypo():
     print("Add these to your Diet':peas,asparagus,sesame seeds,tuna,cheese,eggs,milk,taking vitamin B-12 supplements,meat,fish,vegetables,fruits,gluten free grains,beverages.\n 'Remove these to your Diet:millet,highly processed foods like hot dogs, cakes, cookies, supplements,soy-based foods,coffee, green tea, and alcohol,peaches, pears and strawberries")
 # taking the dictionary with only symptoms as keys
@@ -65,37 +70,37 @@ if Thyroid['report'] == 'yes':
     report['Serum_T4'] = float(input("Please provide the Serum T4 value:"))
     report['Serum_Tsh'] = float(input("Please provide the Serum TSH value:"))
     if report['Serum_T3'] > 2.3 and report['Serum_T4'] > 12.0 and report['Serum_tsh'] > 5.5:
-        print("Your test results say, you have Hypothyroidism")
+        hypo()
         treathypo()
     elif report['Serum_T3'] > 2.3 and report['Serum_T4'] > 12.0:
-        print("Your test results say, you have Hypothyroidism")
+        hypo()
         treathypo()
     elif report['Serum_T4'] > 12.0 and report['Serum_tsh'] > 5.5:
-        print("Your test results say, you have Hypothyroidism")
+        hypo()
         treathypo()
     elif report['Serum_tsh'] > 5.5 and report['Serum_T3'] > 2.3:
-        print("Your test results say, you have Hypothyroidism")
+        hypo()
         treathypo()
     elif report['Serum_tsh'] > 5.5:
-        print("You have Hypothyroidism")
+        hypo()
         treathypo()
     elif report['Serum_T3'] < 0.8 and report['Serum_T4'] < 4.8 and report['Serum_tsh'] < 0.35:
-        print("Your test results say, you have Hyperthyroidism")
+        hyper()
         treathyper()
     elif report['Serum_T3'] < 0.8 and report['Serum_T4'] < 4.8:
-        print("Your test results say, you have Hyperthyroidism")
+        hyper()
         treathyper()
     elif report['Serum_T4'] < 4.8 and report['Serum_tsh'] < 0.35:
-        print("Your test results say, you have Hyperthyroidism")
+        hyper()
         treathyper()
     elif report['Serum_tsh'] < 0.35 and report['Serum_T3'] < 0.8:
-        print("Your test results say, you have Hyperthyroidism")
+        hyper()
         treathyper()
     elif report['Serum_tsh'] < 0.35:
-        print("You have Hyperthyroidism")
+        hyper()
         treathyper()
-
-
+    else:
+        print("Your report results says you have no thyroid")
 # conditon for identifing the disease by identifing the symptoms
 if Thyroid['report'] == 'no':
     Hypo['Fatigue'] = input(
@@ -113,12 +118,11 @@ if Thyroid['report'] == 'no':
 if (Hypo['Fatigue'] and Hypo['Weight_gain'] and Hypo['Enlarged_thyroid_gland'] and Hypo[
         'Increased_sensitivity_to_cold']) == 'yes' or (Hypo['Fatigue'] and Hypo['Weight_gain'] and Hypo['Enlarged_thyroid_gland'] and Hypo[
         'Increased_sensitivity_to_cold']) == 'y' :
-        print("You might be suffering from Hypothyroidism")
+        hypo()
         treathypo()
 else:
     print("you do not seem to have hypothyroid ")
-    print("checking for Hyper thyroidism")
-
+    print("checking for Hyper thyroidism...")
     Hyper['anxiety'] = input("These days do you feel anxiety or irritation for everything:").lower()
     Hyper['increased_appetite'] = input("Lately have you felt that your appetite increased:").lower()
     Hyper['fatigue'] = input("Do you feel tired easily these days:").lower()
@@ -138,7 +142,7 @@ else:
 if (Hyper['weight_loss'] and Hyper['sweating'] and Hyper['Enlarged_thyroid_gland'] and Hyper[
         'bowel_movements'] )== 'yes' or (Hyper['weight_loss'] and Hyper['sweating'] and Hyper['Enlarged_thyroid_gland'] and Hyper[
         'bowel_movements'] )== 'y':
-        print("You might be suffering from Hyperthyroidism")
+        hyper()
         treathyper()
 else:
     print("you do not seem to have hyper thyroidism anyways we suggest you to consult a doctor for accurate results.")
